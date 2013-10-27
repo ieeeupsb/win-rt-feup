@@ -1,0 +1,15 @@
+﻿<local:PersonalAreaModel 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"       
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:SifeupMobileWP" 
+    SampleProperty="Sample Text Property Value">
+
+    <local:PersonalAreaModel.Items>
+        <local:ItemViewModel LineOne="Email" LineTwo="ei10139@fe.up.pt" LineThree="Maecenas praesent accum"/>
+        <local:ItemViewModel LineOne="Alternative Email" LineTwo="miguelluisfonseca@gmail.com" LineThree="utpat maecenas praesent"/>
+        <local:ItemViewModel LineOne="Programme" LineTwo="Mestrado Integrado em Engenharia Informática e Computa??" LineThree=""/>
+        <local:ItemViewModel LineOne="Status" LineTwo="Frequentar" LineThree="an bibendum"/>
+        <local:ItemViewModel LineOne="Year" LineTwo="4" LineThree="Dictumst el"/>
+    </local:PersonalAreaModel.Items>
+    
+</local:PersonalAreaModel>
