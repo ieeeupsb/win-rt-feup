@@ -76,7 +76,7 @@ namespace EUP
 
             //Object canteenTemplate;
             //this.Resources.TryGetValue("canteenSectionDataTemplate", out canteenTemplate);
-            foreach (CanteenFEUP canteen in canteens)
+            /*foreach (CanteenFEUP canteen in canteens)
             {
                 HubSection hs = new HubSection();
                 hs.Header = canteen.descricao;
@@ -85,7 +85,8 @@ namespace EUP
                 //hs.ContentTemplate = canteenTemplate as DataTemplate; //estoura
                 hs.ContentTemplate = this.sectionzinha.ContentTemplate; //shitty temp solution
                 this.canteensHub.Sections.Add(hs);
-            }
+            }*/
+            this.canteens.DataContext = canteens;
             //this.sectionzinha.Visibility = Visibility.Collapsed;
             //this.sectionzinha.Header = canteens[0].descricao;
             //this.sectionzinha.DataContext = canteens[0].ementas;

@@ -12,37 +12,29 @@
     mc:Ignorable="d">
 
     <Page.Resources>
-        <DataTemplate x:Key="canteenSectionDataTemplate"> <!-- não funca-->
-            <GridView
-                        ItemsSource="{Binding}"
-                        Margin="-9,-14,0,0"
-                        AutomationProperties.AutomationId="ItemGridView"
-                        AutomationProperties.Name="Items In Group"
-                        ItemTemplate="{StaticResource canteenDataTemplate}"
+        <DataTemplate x:Key="canteenDataTemplate">
+            <StackPanel DataContext="{Binding}">
+                <TextBlock Text="{Binding descricao}" Style="{ThemeResource SubheaderTextBlockStyle}"/>
+                <GridView
+                        Margin="10"
+                        ItemsSource="{Binding ementas}"
+                        ItemTemplate="{StaticResource menuDataTemplate}"
                         SelectionMode="None"
-                        IsSwipeEnabled="false"
-                        IsItemClickEnabled="False"
-                        ItemClick="ItemView_ItemClick">
-            </GridView>
+                        IsItemClickEnabled="False">
+                </GridView>
+            </StackPanel>
         </DataTemplate>
         <!-- Grid-appropriate 310 by 260 pixel item template as seen in section 4 -->
-        <DataTemplate x:Key="canteenDataTemplate">
-            <Grid Height="250" Width="310" Margin="5,10,5,10" DataContext="{Binding}">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <!--<Border Background="{ThemeResource ListViewItemPlaceholderBackgroundThemeBrush}" Height="150">
-                    <Image Source="{Binding ImagePath}" Stretch="UniformToFill" AutomationProperties.Name="{Binding Title}"/>
-                </Border>-->
-                <StackPanel Grid.Row="1" Margin="0,10,0,0">
+        <DataTemplate x:Key="menuDataTemplate">
+            <Border Height="250" Width="310" Margin="5,10,5,10" DataContext="{Binding}">
+                <StackPanel>
                     <TextBlock Text="{Binding data}" Style="{StaticResource TitleTextBlockStyle}"/>
                     <ListView SelectionMode="None"
                         IsItemClickEnabled="False"
                         ItemsSource="{Binding pratos}"
                         ItemTemplate="{StaticResource mealDataTemplate}" />
                 </StackPanel>
-            </Grid>
+            </Border>
         </DataTemplate>
         <DataTemplate x:Key="mealDataTemplate">
             <TextBlock Text="{Binding descricao}" Style="{StaticResource BodyTextBlockStyle}" TextWrapping="WrapWholeWords"/>
@@ -58,7 +50,11 @@
                 <EntranceThemeTransition/>
             </TransitionCollection>
         </Grid.ChildrenTransitions>
-        <Border Width="175" HorizontalAlignment="Left">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="175"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="0">
             <Border.Background>
                 <ImageBrush ImageSource="Assets/MediumGray.png" />
             </Border.Background>
@@ -73,54 +69,29 @@
                 <Button HorizontalAlignment="Stretch">FEP</Button>
             </StackPanel>
         </Border>
-        <Hub x:Name="canteensHub" SectionHeaderClick="Hub_SectionHeaderClick" Margin="175 0 0 0">
-            <Hub.Header>
-                <!-- Back button and page title -->
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <!--<ColumnDefinition Width="80"/>-->
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <!--<Button  x:Name="backButton" Style="{StaticResource NavigationBackButtonNormalStyle}"
-                        Margin="-1,-1,39,0" 
-                        VerticalAlignment="Top"
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <!--<Button Grid.Column="0" Grid.Row="0" Padding="10" VerticalAlignment="Center" Name="backButton" Style="{StaticResource NavigationBackButtonNormalStyle}"
                         Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
                         AutomationProperties.Name="Back"
                         AutomationProperties.AutomationId="BackButton"
-                        AutomationProperties.ItemType="Navigation Button"/> -->
-                    <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
-                        VerticalAlignment="Top" IsHitTestVisible="false" TextWrapping="NoWrap" />
-                </Grid>
-            </Hub.Header>
-            <!--
-                <HubSection Width="260" Header="Cantinas">
-                    <HubSection.Background>
-                        <ImageBrush ImageSource="Assets/MediumGray.png" />
-                    </HubSection.Background>
-                    <DataTemplate>
-                        <Button HorizontalAlignment="Stretch">FEUP</Button>
-                    </DataTemplate>
-                </HubSection>
-            -->
-            <HubSection x:Name="sectionzinha" IsHeaderInteractive="False"
-                        x:Uid="Section3Header" Padding="40,40,40,32" Visibility="Collapsed">
-                <!--d:DataContext="{Binding , Source={d:DesignData Source=/DataModel/SampleCanteens.json, Type=data:CanteenFEUP}}"-->
-                
-                <DataTemplate>
-                    <GridView
-                        x:Name="itemGridView"
-                        ItemsSource="{Binding}"
-                        Margin="-9,-14,0,0"
-                        AutomationProperties.AutomationId="ItemGridView"
-                        AutomationProperties.Name="Items In Group"
-                        ItemTemplate="{StaticResource canteenDataTemplate}"
-                        SelectionMode="None"
-                        IsSwipeEnabled="false"
-                        IsItemClickEnabled="False"
-                        ItemClick="ItemView_ItemClick">
-                    </GridView>
-                </DataTemplate>
-            </HubSection>
-        </Hub>
+                        AutomationProperties.ItemType="Navigation Button"/>-->
+            <TextBlock Grid.Row="0" Padding="10" x:Name="pageTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}"
+                VerticalAlignment="Center" IsHitTestVisible="false" TextWrapping="NoWrap" />
+            <GridView 
+                Grid.Row="1"
+                Padding="10"
+                x:Name="canteens"
+                ItemsSource="{Binding}"
+                ItemTemplate="{StaticResource canteenDataTemplate}"
+                SelectionMode="None"
+                IsSwipeEnabled="false"
+                IsItemClickEnabled="False"
+                ItemClick="ItemView_ItemClick">
+            </GridView>
+        </Grid>
     </Grid>
 </Page>
