@@ -74,19 +74,21 @@ namespace EUP
 
             CanteenFEUP[] canteens = await API.GetAsync<CanteenFEUP[]>(API.Actions.GetFEUPCanteen);
 
-            /*Object canteenTemplate;
-            this.Resources.TryGetValue("canteenSectionDataTemplate", out canteenTemplate);
+            //Object canteenTemplate;
+            //this.Resources.TryGetValue("canteenSectionDataTemplate", out canteenTemplate);
             foreach (CanteenFEUP canteen in canteens)
             {
                 HubSection hs = new HubSection();
                 hs.Header = canteen.descricao;
                 hs.DataContext = canteen.ementas;
                 
-                hs.ContentTemplate = canteenTemplate as DataTemplate; //estoura
+                //hs.ContentTemplate = canteenTemplate as DataTemplate; //estoura
+                hs.ContentTemplate = this.sectionzinha.ContentTemplate; //shitty temp solution
                 this.canteensHub.Sections.Add(hs);
-            }*/
-            this.sectionzinha.Header = canteens[0].descricao;
-            this.sectionzinha.DataContext = canteens[0].ementas;
+            }
+            //this.sectionzinha.Visibility = Visibility.Collapsed;
+            //this.sectionzinha.Header = canteens[0].descricao;
+            //this.sectionzinha.DataContext = canteens[0].ementas;
            
 
         }

@@ -83,7 +83,7 @@
                 </HubSection.Background>
             </HubSection>
             <HubSection x:Name="sectionzinha" IsHeaderInteractive="False"
-                        x:Uid="Section3Header" Padding="40,40,40,32">
+                        x:Uid="Section3Header" Padding="40,40,40,32" Visibility="Collapsed">
                 <!--d:DataContext="{Binding , Source={d:DesignData Source=/DataModel/SampleCanteens.json, Type=data:CanteenFEUP}}"-->
                 
                 <DataTemplate>
