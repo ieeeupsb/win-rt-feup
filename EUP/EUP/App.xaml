@@ -8,7 +8,7 @@
     <Application.Resources>
         <!-- Application-specific resources -->
 
-        <x:String x:Key="AppName">EUP</x:String>
+        <x:String x:Key="AppName">eUP</x:String>
 
     </Application.Resources>
 </Application>

@@ -21,7 +21,7 @@
                         ItemTemplate="{StaticResource canteenDataTemplate}"
                         SelectionMode="None"
                         IsSwipeEnabled="false"
-                        IsItemClickEnabled="True"
+                        IsItemClickEnabled="False"
                         ItemClick="ItemView_ItemClick">
             </GridView>
         </DataTemplate>
@@ -58,30 +58,50 @@
                 <EntranceThemeTransition/>
             </TransitionCollection>
         </Grid.ChildrenTransitions>
-        <Hub x:Name="canteensHub" SectionHeaderClick="Hub_SectionHeaderClick">
+        <Border Width="175" HorizontalAlignment="Left">
+            <Border.Background>
+                <ImageBrush ImageSource="Assets/MediumGray.png" />
+            </Border.Background>
+            <StackPanel HorizontalAlignment="Center" Margin="10" >
+                <StackPanel.Resources>
+                    <Style TargetType="Button">
+                        <Setter Property="Margin" Value="0,10,0,0"/>
+                    </Style>
+                </StackPanel.Resources>
+                <TextBlock Style="{ThemeResource SubheaderTextBlockStyle}" Margin="0 15 0 10">Cantinas</TextBlock>
+                <Button HorizontalAlignment="Stretch">FEUP</Button>
+                <Button HorizontalAlignment="Stretch">FEP</Button>
+            </StackPanel>
+        </Border>
+        <Hub x:Name="canteensHub" SectionHeaderClick="Hub_SectionHeaderClick" Margin="175 0 0 0">
             <Hub.Header>
                 <!-- Back button and page title -->
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="80"/>
+                        <!--<ColumnDefinition Width="80"/>-->
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Button  x:Name="backButton" Style="{StaticResource NavigationBackButtonNormalStyle}"
+                    <!--<Button  x:Name="backButton" Style="{StaticResource NavigationBackButtonNormalStyle}"
                         Margin="-1,-1,39,0" 
                         VerticalAlignment="Top"
                         Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
                         AutomationProperties.Name="Back"
                         AutomationProperties.AutomationId="BackButton"
-                        AutomationProperties.ItemType="Navigation Button"/>
+                        AutomationProperties.ItemType="Navigation Button"/> -->
                     <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
                         VerticalAlignment="Top" IsHitTestVisible="false" TextWrapping="NoWrap" />
                 </Grid>
             </Hub.Header>
-            <HubSection Width="270">
-                <HubSection.Background>
-                    <ImageBrush ImageSource="Assets/MediumGray.png" Stretch="UniformToFill" />
-                </HubSection.Background>
-            </HubSection>
+            <!--
+                <HubSection Width="260" Header="Cantinas">
+                    <HubSection.Background>
+                        <ImageBrush ImageSource="Assets/MediumGray.png" />
+                    </HubSection.Background>
+                    <DataTemplate>
+                        <Button HorizontalAlignment="Stretch">FEUP</Button>
+                    </DataTemplate>
+                </HubSection>
+            -->
             <HubSection x:Name="sectionzinha" IsHeaderInteractive="False"
                         x:Uid="Section3Header" Padding="40,40,40,32" Visibility="Collapsed">
                 <!--d:DataContext="{Binding , Source={d:DesignData Source=/DataModel/SampleCanteens.json, Type=data:CanteenFEUP}}"-->
@@ -96,12 +116,11 @@
                         ItemTemplate="{StaticResource canteenDataTemplate}"
                         SelectionMode="None"
                         IsSwipeEnabled="false"
-                        IsItemClickEnabled="True"
+                        IsItemClickEnabled="False"
                         ItemClick="ItemView_ItemClick">
                     </GridView>
                 </DataTemplate>
             </HubSection>
-
         </Hub>
     </Grid>
 </Page>
