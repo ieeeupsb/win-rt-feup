@@ -8,24 +8,25 @@ namespace Common.JSON
 {
     public class CanteenFEUP
     {
-        public int codigo;
-        public string descricao;
-        public string horario;
-        public CanteenMenu[] ementas;
+
+        public int codigo { get; set; }
+        public string descricao { get; set; }
+        public string horario { get; set; }
+        public CanteenMenu[] ementas{ get; set; }
     }
 
     public class CanteenMenu
     {
-        public string estado;
-        public string data;
-        public Meal[] pratos;
+        public string estado { get; set; }
+        public string data { get; set; }
+        public Meal[] pratos{ get; set; }
     }
 
     public class Meal
     {
-        public string estado;
-        public string descricao;
-        public int tipo;
-        public string tipo_descr;
+        public string estado { get; set; }
+        public string descricao{ get; set; }
+        public int tipo { get; set; }
+        public string tipo_descr { get; set; }
     }
 }

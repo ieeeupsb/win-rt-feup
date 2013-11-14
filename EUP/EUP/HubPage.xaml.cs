@@ -67,10 +67,27 @@ namespace EUP
         private async void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
             // TODO: Create an appropriate data model for your problem domain to replace the sample data
-            var sampleDataGroup = await SampleDataSource.GetGroupAsync("Group-4");
-            this.DefaultViewModel["Section3Items"] = sampleDataGroup;
+            //var sampleDataGroup = await SampleDataSource.GetGroupAsync("Group-4");
+            //this.DefaultViewModel["Section3Items"] = sampleDataGroup;
 
-            CanteenFEUP[] canteena = await API.GetAsync<CanteenFEUP[]>(API.Actions.GetFEUPCanteen);
+            //this.canteensHub.Sections.Clear();
+
+            CanteenFEUP[] canteens = await API.GetAsync<CanteenFEUP[]>(API.Actions.GetFEUPCanteen);
+
+            /*Object canteenTemplate;
+            this.Resources.TryGetValue("canteenSectionDataTemplate", out canteenTemplate);
+            foreach (CanteenFEUP canteen in canteens)
+            {
+                HubSection hs = new HubSection();
+                hs.Header = canteen.descricao;
+                hs.DataContext = canteen.ementas;
+                
+                hs.ContentTemplate = canteenTemplate as DataTemplate; //estoura
+                this.canteensHub.Sections.Add(hs);
+            }*/
+            this.sectionzinha.Header = canteens[0].descricao;
+            this.sectionzinha.DataContext = canteens[0].ementas;
+           
 
         }
 

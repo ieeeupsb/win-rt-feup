@@ -16,9 +16,6 @@ namespace Common
             GetFEUPCanteen
         }
 
-        private const string BASE_URI = "http://nuieee.fe.up.pt/motion/";
-        private const string REQUEST_FORMAT = ".php";
-
         private static Uri getUrlFromAction(Actions action)
         {
             switch (action)

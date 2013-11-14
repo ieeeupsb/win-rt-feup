@@ -133,6 +133,7 @@
       <SubType>Designer</SubType>
     </AppxManifest>
     <None Include="Common\ReadMe.txt" />
+    <None Include="DataModel\SampleCanteens.json" />
     <None Include="EUP_TemporaryKey.pfx" />
     <PRIResource Include="Strings\en-US\Resources.resw">
       <SubType>Designer</SubType>

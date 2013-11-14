@@ -1,0 +1,227 @@
+﻿[
+    {
+        "codigo": 1,
+        "descricao": "Cantina",
+        "horario": "11h30 às 14h00",
+        "ementas": [
+            {
+                "estado": "Aberto",
+                "data": "13-11-2013",
+                "pratos": [
+                    {
+                        "estado": "Aberto",
+                        "descricao": "Caril de frango com arroz de ervilhas",
+                        "tipo": 1,
+                        "tipo_descr": "Carne"
+                    },
+                    {
+                        "estado": "Aberto",
+                        "descricao": "Salmão e legumes assados",
+                        "tipo": 2,
+                        "tipo_descr": "Peixe"
+                    },
+                    {
+                        "estado": "Aberto",
+                        "descricao": "Peixinhos da horta c/arroz de feijão ",
+                        "tipo": 3,
+                        "tipo_descr": "Vegetariano"
+                    }
+                ]
+            },
+            {
+                "estado": "Aberto",
+                "data": "14-11-2013",
+                "pratos": [
+                    {
+                        "estado": "Aberto",
+                        "descricao": "Feijoada à transmontana",
+                        "tipo": 1,
+                        "tipo_descr": "Carne"
+                    },
+                    {
+                        "estado": "Aberto",
+                        "descricao": "Sardinha na brasa com batata cozida e molho verde",
+                        "tipo": 2,
+                        "tipo_descr": "Peixe"
+                    },
+                    {
+                        "estado": "Aberto",
+                        "descricao": "Bolonhesa de legumes",
+                        "tipo": 3,
+                        "tipo_descr": "Vegetariano"
+                    }
+                ]
+            },
+            {
+                "estado": "Aberto",
+                "data": "15-11-2013",
+                "pratos": [
+                    {
+                        "estado": "Aberto",
+                        "descricao": "Espetada de perú com molho de tomate e esparguete",
+                        "tipo": 1,
+                        "tipo_descr": "Carne"
+                    },
+                    {
+                        "estado": "Aberto",
+                        "descricao": "Peixe espada hortelão com milho frito ",
+                        "tipo": 2,
+                        "tipo_descr": "Peixe"
+                    },
+                    {
+                        "estado": "Aberto",
+                        "descricao": "Pudim de espargos ",
+                        "tipo": 3,
+                        "tipo_descr": "Vegetariano"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "codigo": 2,
+        "descricao": "Grill",
+        "horario": "12h00 às 14h00",
+        "ementas": [
+            {
+                "estado": "Aberto",
+                "data": "13-11-2013",
+                "pratos": [
+                    {
+                        "estado": "Aberto",
+                        "descricao": "Lombo assado com castanhas ",
+                        "tipo": 1,
+                        "tipo_descr": "Prato do Dia"
+                    }
+                ]
+            },
+            {
+                "estado": "Aberto",
+                "data": "14-11-2013",
+                "pratos": [
+                    {
+                        "estado": "Aberto",
+                        "descricao": "Bacalhau assado com presunto ",
+                        "tipo": 1,
+                        "tipo_descr": "Prato do Dia"
+                    }
+                ]
+            },
+            {
+                "estado": "Aberto",
+                "data": "15-11-2013",
+                "pratos": [
+                    {
+                        "estado": "Aberto",
+                        "descricao": "Grelhado misto ",
+                        "tipo": 1,
+                        "tipo_descr": "Prato do Dia"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "codigo": 4,
+        "descricao": "Cafetaria - Restaurante FEUP",
+        "horario": "12h00 às 14h45",
+        "ementas": [
+            {
+                "estado": "Aberto",
+                "data": "13-11-2013",
+                "pratos": [
+                    {
+                        "estado": "Aberto",
+                        "descricao": "Tortilha à moda da casa",
+                        "tipo": 1,
+                        "tipo_descr": "Carne"
+                    },
+                    {
+                        "estado": "Aberto",
+                        "descricao": "Badejo assado no forno com legumes salteados",
+                        "tipo": 2,
+                        "tipo_descr": "Peixe"
+                    },
+                    {
+                        "estado": "Aberto",
+                        "descricao": "Quiche de legumes guarnecida",
+                        "tipo": 3,
+                        "tipo_descr": "Vegetariano"
+                    },
+                    {
+                        "estado": "Aberto",
+                        "descricao": "Abrótea grelhada com legumes salteados",
+                        "tipo": 4,
+                        "tipo_descr": "Dieta"
+                    }
+                ]
+            },
+            {
+                "estado": "Aberto",
+                "data": "14-11-2013",
+                "pratos": [
+                    {
+                        "estado": "Aberto",
+                        "descricao": "Carne de porco à Portuguesa",
+                        "tipo": 1,
+                        "tipo_descr": "Carne"
+                    },
+                    {
+                        "estado": "Aberto",
+                        "descricao": "Abrótea corada com arroz de tomate",
+                        "tipo": 2,
+                        "tipo_descr": "Peixe"
+                    },
+                    {
+                        "estado": "Aberto",
+                        "descricao": "Pimentos recheados com lentilhas",
+                        "tipo": 3,
+                        "tipo_descr": "Vegetariano"
+                    },
+                    {
+                        "estado": "Aberto",
+                        "descricao": "Bife de vitela grelhado",
+                        "tipo": 4,
+                        "tipo_descr": "Dieta"
+                    }
+                ]
+            },
+            {
+                "estado": "Aberto",
+                "data": "15-11-2013",
+                "pratos": [
+                    {
+                        "estado": "Aberto",
+                        "descricao": "Tranches de vitela mirandesa estufada com puré de batata",
+                        "tipo": 1,
+                        "tipo_descr": "Carne"
+                    },
+                    {
+                        "estado": "Aberto",
+                        "descricao": "Pescada grelhada com molho de limão",
+                        "tipo": 2,
+                        "tipo_descr": "Peixe"
+                    },
+                    {
+                        "estado": "Aberto",
+                        "descricao": "Tofu gratinado com rebentos de soja",
+                        "tipo": 3,
+                        "tipo_descr": "Vegetariano"
+                    },
+                    {
+                        "estado": "Aberto",
+                        "descricao": "Pescada cozida com batata e legumes",
+                        "tipo": 4,
+                        "tipo_descr": "Dieta"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "codigo": 5,
+        "descricao": "Restaurante do INEGI/IDMEC",
+        "horario": "",
+        "ementas": []
+    }
+]
