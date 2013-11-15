@@ -16,7 +16,7 @@
             <Grid DataContext="{Binding}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*" MinHeight="300"/> <!-- Devia estar a escalar com o tamanho do conteudo -->
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" Text="{Binding descricao}" Style="{ThemeResource SubheaderTextBlockStyle}"/>
                 <ListView
@@ -32,15 +32,19 @@
         </DataTemplate>
         <!-- Grid-appropriate 310 by 260 pixel item template as seen in section 4 -->
         <DataTemplate x:Key="menuDataTemplate">
-            <StackPanel Width="310" Margin="5,10,5,10" DataContext="{Binding}">
-                <TextBlock Text="{Binding data}" Style="{StaticResource TitleTextBlockStyle}"/>
-                <ListView SelectionMode="None"
+            <Grid Width="310" Margin="5,10,5,10" DataContext="{Binding}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="{Binding data}" Style="{StaticResource TitleTextBlockStyle}"/>
+                <ListView Grid.Row="1" SelectionMode="None"
                         IsItemClickEnabled="False"
                         ItemsSource="{Binding pratos}"
                         ItemTemplate="{StaticResource mealDataTemplate}"
                         IsSwipeEnabled="False">
                 </ListView>
-            </StackPanel>
+            </Grid>
         </DataTemplate>
         <DataTemplate x:Key="mealDataTemplate">
             <TextBlock Text="{Binding descricao}" Margin="5" Style="{StaticResource BodyTextBlockStyle}" TextWrapping="WrapWholeWords"/>
