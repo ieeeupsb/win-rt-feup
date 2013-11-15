@@ -13,31 +13,37 @@
 
     <Page.Resources>
         <DataTemplate x:Key="canteenDataTemplate">
-            <StackPanel DataContext="{Binding}">
-                <TextBlock Text="{Binding descricao}" Style="{ThemeResource SubheaderTextBlockStyle}"/>
-                <GridView
+            <Grid DataContext="{Binding}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*" MinHeight="300"/> <!-- Devia estar a escalar com o tamanho do conteudo -->
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="{Binding descricao}" Style="{ThemeResource SubheaderTextBlockStyle}"/>
+                <ListView
+                        Grid.Row="1"
                         Margin="10"
                         ItemsSource="{Binding ementas}"
                         ItemTemplate="{StaticResource menuDataTemplate}"
                         SelectionMode="None"
-                        IsItemClickEnabled="False">
-                </GridView>
-            </StackPanel>
+                        IsItemClickEnabled="False"
+                        IsSwipeEnabled="False">
+                </ListView>
+            </Grid>
         </DataTemplate>
         <!-- Grid-appropriate 310 by 260 pixel item template as seen in section 4 -->
         <DataTemplate x:Key="menuDataTemplate">
-            <Border Height="250" Width="310" Margin="5,10,5,10" DataContext="{Binding}">
-                <StackPanel>
-                    <TextBlock Text="{Binding data}" Style="{StaticResource TitleTextBlockStyle}"/>
-                    <ListView SelectionMode="None"
+            <StackPanel Width="310" Margin="5,10,5,10" DataContext="{Binding}">
+                <TextBlock Text="{Binding data}" Style="{StaticResource TitleTextBlockStyle}"/>
+                <ListView SelectionMode="None"
                         IsItemClickEnabled="False"
                         ItemsSource="{Binding pratos}"
-                        ItemTemplate="{StaticResource mealDataTemplate}" />
-                </StackPanel>
-            </Border>
+                        ItemTemplate="{StaticResource mealDataTemplate}"
+                        IsSwipeEnabled="False">
+                </ListView>
+            </StackPanel>
         </DataTemplate>
         <DataTemplate x:Key="mealDataTemplate">
-            <TextBlock Text="{Binding descricao}" Style="{StaticResource BodyTextBlockStyle}" TextWrapping="WrapWholeWords"/>
+            <TextBlock Text="{Binding descricao}" Margin="5" Style="{StaticResource BodyTextBlockStyle}" TextWrapping="WrapWholeWords"/>
         </DataTemplate>
     </Page.Resources>
 
@@ -81,7 +87,10 @@
                         AutomationProperties.ItemType="Navigation Button"/>-->
             <TextBlock Grid.Row="0" Padding="10" x:Name="pageTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}"
                 VerticalAlignment="Center" IsHitTestVisible="false" TextWrapping="NoWrap" />
-            <GridView 
+            <GridView
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Center"
+                VerticalContentAlignment="Center"
                 Grid.Row="1"
                 Padding="10"
                 x:Name="canteens"
@@ -91,6 +100,11 @@
                 IsSwipeEnabled="false"
                 IsItemClickEnabled="False"
                 ItemClick="ItemView_ItemClick">
+                <GridView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VariableSizedWrapGrid Orientation="Horizontal" VerticalAlignment="Center"/>
+                    </ItemsPanelTemplate>
+                </GridView.ItemsPanel>
             </GridView>
         </Grid>
     </Grid>
